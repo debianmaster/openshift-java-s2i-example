@@ -1,7 +1,7 @@
 
 This repo demonstrates openshift v3 s2i scripts usage
 
-> In order to use openshift s2i image  create directory  .s2i and files under s2i as follows
+> In order to use openshift s2i image  create directory  .s2i and files under s2i as follows   
 > To Install s2i command line tool https://github.com/debianmaster/Notes/wiki/Source-2-Image---(s2i)--on-openshift    
 
 
@@ -21,6 +21,8 @@ ${CATALINA_HOME}/bin/catalina.sh run
 ```
 
 ### Create builder image
+> tomcat8-jdk8  is my future builder image name   
+
 ```sh
 docker build -t tomcat8-jdk8 .
 ```

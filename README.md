@@ -2,7 +2,9 @@
 This repo demonstrates openshift v3 s2i scripts usage
 
 > In order to use openshift s2i image  create directory  .s2i and files under s2i as follows
-> To Install s2i command line tool https://github.com/debianmaster/Notes/wiki/Source-2-Image---(s2i)--on-openshift   
+> To Install s2i command line tool https://github.com/debianmaster/Notes/wiki/Source-2-Image---(s2i)--on-openshift    
+
+
 #### assemble.sh  
 > This file is used dynamically adding artifacts into base image and creating a app image as a result.   
 

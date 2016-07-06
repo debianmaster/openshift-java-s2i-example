@@ -1,0 +1,2 @@
+#curl -o $CATALINA_HOME/webapps/ROOT.war  -O ${WAR_FILE_URL}
+

@@ -38,3 +38,16 @@ s2i build test/test-app tomcat8-jdk8 tomcat8-jdk8-app
 ```sh
 docker run -d  -p 8080:8080  tomcat8-jdk8-app 
 ```
+
+## Creating template on Openshift 
+
+### Create Image stream
+
+### Create Build config
+
+### Create Deployment config
+```sh
+oc new-app sample/s2i-war-sample
+```
+
+

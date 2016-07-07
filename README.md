@@ -51,7 +51,11 @@ oc new-build --strategy=docker --name=tomcat8-jdk8 https://github.com/debianmast
 
 #### Create Build config
 ```sh
-oc new-build  tomcat8-jdk8~https://github.com/debianmaster/openshift-s2i-example.git --name=s2i-war-sample
+oc new-build  \
+-e WAR_FILE_URL=https://raw.githubusercontent.com/VeerMuchandi/ps/master/deployments/ROOT.war \ 
+tomcat8-jdk8~https://github.com/debianmaster/openshift-s2i-example.git \
+--name=s2i-war-sample \
+
 ```
 
 #### Create Deployment config

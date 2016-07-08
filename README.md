@@ -39,11 +39,21 @@ s2i build test/test-app tomcat8-jdk8 tomcat8-jdk8-app
 docker run -d  -p 8080:8080  tomcat8-jdk8-app 
 ```
 
+## Using the template provided in this repo.
+```sh
+oc new-build --strategy=docker --name=tomcat8-jdk8 https://github.com/debianmaster/openshift-s2i-example.git -n openshift
+oc create -f tomcat8-jdk8-war.template
+```
+> Goto ui -> Add to project and look for tomcat8-jdk8 template. 
+> In the step above we are creating a base image with tomcat and java and storing it on openshift namespace   
+
+
+
 ## Creating template on Openshift 
 
 > i have arrived at the template  tomcat8-jdk8-war.template in this repo by creating following objects indivudually and then creating a template out of it.  (with few modifications)   
 
-#### Create Image stream
+#### Create Image stream & export templates 
 ```sh
 oc new-app tomcat8-jdk8~https://github.com/debianmaster/sample-binaries.git --name='tomcat8-jdk8-war'
 oc export is,bc,dc,svc --as-template=tomcat8-jdk8  > template

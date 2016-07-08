@@ -27,7 +27,7 @@ ${CATALINA_HOME}/bin/catalina.sh run
 docker build -t tomcat8-jdk8 .
 ```
 
-### Test builder image by deploying war
+### Test builder image by deploying war  (Optional)
 >  on base image tomcat8-jdk8 deploy the war (contents) that is present in test/test-app and make a app image called (tomcat8-jdk8-app)   
 
 ```sh
@@ -39,11 +39,43 @@ s2i build test/test-app tomcat8-jdk8 tomcat8-jdk8-app
 docker run -d  -p 8080:8080  tomcat8-jdk8-app 
 ```
 
-## Creating template on Openshift 
+## Using the template provided in this repo.
+```sh
+oc new-build --strategy=docker --name=tomcat8-jdk8 https://github.com/debianmaster/openshift-s2i-example.git -n openshift
+oc create -f tomcat8-jdk8-war.template
+```
+> Goto ui -> Add to project and look for tomcat8-jdk8-war template. 
+> In the step above we are creating a base image with tomcat and java and storing it on openshift namespace   
+
+
+
+
+
+
+
+
+
+
+
+
+
+> You can skip the part below unless you want to know how i have create the tomcat8-jdk8-war.template file in this repo    
+
+
+
+
+
+
+
+
+
+
+
+## Creating template on Openshift   (Optional)
 
 > i have arrived at the template  tomcat8-jdk8-war.template in this repo by creating following objects indivudually and then creating a template out of it.  (with few modifications)   
 
-#### Create Image stream
+#### Create Image stream & export templates 
 ```sh
 oc new-app tomcat8-jdk8~https://github.com/debianmaster/sample-binaries.git --name='tomcat8-jdk8-war'
 oc export is,bc,dc,svc --as-template=tomcat8-jdk8  > template

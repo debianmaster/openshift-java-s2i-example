@@ -45,17 +45,12 @@ docker run -d  -p 8080:8080  tomcat8-jdk8-app
 
 #### Create Image stream
 ```sh
-oc new-build --strategy=docker --name=tomcat8-jdk8 https://github.com/debianmaster/openshift-s2i-example.git
+oc new-app tomcat8-jdk8~https://github.com/debianmaster/sample-binaries.git --name='tomcat8-jdk8-war'
+oc export is,bc,dc,svc --as-template=tomcat8-jdk8  > template
 ```
 
-#### Create Build config
-```sh
-oc new-build tomcat8-jdk8~https://github.com/debianmaster/sample-binaries.git --name='tomcat8-jdk8-war'
-```
+> Modify the template above and rename it as tomcat8-jdk8-war.template   
 
-#### Create Deployment config
-```sh
-oc new-app tomcat8-jdk8-war --name=s2i-war-sample
-```
+
 
 

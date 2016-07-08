@@ -41,7 +41,7 @@ docker run -d  -p 8080:8080  tomcat8-jdk8-app
 
 ## Creating template on Openshift 
 
-> i have arrived at the template  s2i-war-sample.template in this repo by creating following objects indivudually and then creating a template out of it.  (with few modifications)   
+> i have arrived at the template  tomcat8-jdk8-war.template in this repo by creating following objects indivudually and then creating a template out of it.  (with few modifications)   
 
 #### Create Image stream
 ```sh
@@ -50,12 +50,12 @@ oc new-build --strategy=docker --name=tomcat8-jdk8 https://github.com/debianmast
 
 #### Create Build config
 ```sh
-oc new-build tomcat8-jdk8~https://github.com/debianmaster/sample-binaries.git --name='tomcat8-jdk8-image'
+oc new-build tomcat8-jdk8~https://github.com/debianmaster/sample-binaries.git --name='tomcat8-jdk8-war'
 ```
 
 #### Create Deployment config
 ```sh
-oc new-app tomcat8-jdk8-image --name=s2i-war-sample
+oc new-app tomcat8-jdk8-war --name=s2i-war-sample
 ```
 
 

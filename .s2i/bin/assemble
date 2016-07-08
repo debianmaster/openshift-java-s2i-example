@@ -1,4 +1,2 @@
-#cp -Rf /tmp/src/. $CATALINA_HOME/webapps
-#echo "WAR's copied"
-curl -o $CATALINA_HOME/webapps/ROOT.war  -O ${WAR_FILE_URL}
+cp -Rf /tmp/src/. $CATALINA_HOME/webapps
 

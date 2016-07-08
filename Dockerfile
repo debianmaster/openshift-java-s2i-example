@@ -4,10 +4,10 @@ MAINTAINER Chakradhar Rao Jonagam (9chakri@gmail.com)
 ENV BUILDER_VERSION 1.0
 
 RUN yum -y update; \ 
-    yum install wget --assumeyes; \ 
-    yum install tar --assumeyes; \ 
-    yum install unzip --assumeyes; \ 
-    yum install ca-certificates --assumeyes;\ 
+    yum install wget -y; \ 
+    yum install tar -y; \ 
+    yum install unzip -y; \ 
+    yum install ca-certificates -y;\ 
     yum install sudo -y;\ 
     yum clean all -y 
 
@@ -17,18 +17,17 @@ ENV CATALINA_HOME /tomcat
 
 
 # Install openjdk 1.8 
-RUN yum install java-1.8.0-openjdk.x86_64* --assumeyes; \ 
-    yum clean all -y 
-
-RUN rm -rf /var/lib/apt/lists/* 
+RUN yum install java-1.8.0-openjdk.x86_64* -y && \ 
+    yum clean all -y && \
+    rm -rf /var/lib/apt/lists/* 
 
 # INSTALL TOMCAT 
 WORKDIR /
 
-RUN wget -q -e use_proxy=yes https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz 
-RUN tar -zxf apache-tomcat-*.tar.gz 
-RUN rm -f apache-tomcat-*.tar.gz 
-RUN mv apache-tomcat* tomcat 
+RUN wget -q -e use_proxy=yes https://archive.apache.org/dist/tomcat/tomcat-8/v8.0.32/bin/apache-tomcat-8.0.32.tar.gz && \
+    tar -zxf apache-tomcat-*.tar.gz &&\
+    rm -f apache-tomcat-*.tar.gz && \
+    mv apache-tomcat* tomcat 
 
 
 ENV JAVA_OPTS="-Dtuf.environment=DEV -Dtuf.appFiles.rootDirectory=/TempDirRoot" 
@@ -43,7 +42,6 @@ RUN chmod -R 777 /tomcat /TempDirRoot
 RUN cd /tomcat/webapps/; rm -rf ROOT docs examples host-manager manager 
 
 COPY ./.s2i/bin/ /usr/libexec/s2i
-
 
 USER 1001
 

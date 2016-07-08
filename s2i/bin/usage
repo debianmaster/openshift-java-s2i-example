@@ -1,4 +1,0 @@
-#!/bin/bash -e
-cat <<EOF
-This a sample usage text
-EOF

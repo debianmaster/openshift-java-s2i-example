@@ -5,6 +5,7 @@ This repo demonstrates openshift v3 s2i scripts usage
 > To Install s2i command line tool https://github.com/debianmaster/Notes/wiki/Source-2-Image---(s2i)--on-openshift    
 
 
+
 #### assemble.sh  
 > This file is used dynamically adding artifacts into base image and creating a app image as a result.   
 
@@ -41,6 +42,7 @@ docker run -d  -p 8080:8080  tomcat8-jdk8-app
 
 ## Using the template provided in this repo.
 ```sh
+oc import-image --from=openshift/base-centos7 openshift/base-centos7 -n openshift --confirm
 oc new-build --strategy=docker --name=tomcat8-jdk8 https://github.com/debianmaster/openshift-s2i-example.git -n openshift
 oc create -f tomcat8-jdk8-war.template
 ```

@@ -1,15 +1,11 @@
 FROM jboss/base-jdk:7
 MAINTAINER ravi gupta (rgupta@redhat.com)
 
-WORKDIR .
- 
-
-COPY ./test/test-app/* .
-
+ADD /src/HelloWorldApp.java . 
 USER 1000
 
  
 
-CMD javac *.java
-CMD java HelloWorldApp
+RUN javac HelloWorldApp.java
+RUN java HelloWorldApp
  

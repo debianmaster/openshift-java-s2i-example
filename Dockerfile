@@ -4,7 +4,7 @@ MAINTAINER ravi gupta (rgupta@redhat.com)
  
  
 
-COPY ./src/* .
+COPY ./test/test-app/* .
 
 USER 1000
 

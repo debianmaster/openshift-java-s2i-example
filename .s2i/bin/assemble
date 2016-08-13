@@ -1,2 +1,1 @@
-cp -Rf /tmp/src/. $CATALINA_HOME/webapps
-
+ADD /src/HelloWorldApp.java 

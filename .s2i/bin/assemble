@@ -1,1 +1,1 @@
-ADD /src/HelloWorldApp.java 
+COPY /src/HelloWorldApp.java .

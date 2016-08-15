@@ -8,4 +8,5 @@ USER 1000
 
 RUN javac HelloWorldApp.java
 RUN java HelloWorldApp
+CMD java HelloWorldApp
  

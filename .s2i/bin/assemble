@@ -1,1 +1,1 @@
- 
+cp -R /tmp/src/. /opt/jboss 

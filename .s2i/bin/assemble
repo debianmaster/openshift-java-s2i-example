@@ -1,2 +1,1 @@
-cp -Rf /tmp/src/. $CATALINA_HOME/webapps
-
+cp -R /tmp/src/. /opt/jboss 

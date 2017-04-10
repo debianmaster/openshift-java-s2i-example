@@ -1,10 +1,16 @@
 
 # This repo demonstrates openshift v3 s2i scripts usage
 
+1) Install s2i command line tool
+2) Create builder image
+3) Create application image using Builder image
+
+
 > To Install s2i command line tool https://github.com/debianmaster/Notes/wiki/Source-2-Image---(s2i)--on-openshift   
 ```sh
 s2i --help
 ```    
+  
 > In order to use openshift s2i image  create directory  .s2i and files under .s2i as follows   
 ```sh
 mkdir .s2i

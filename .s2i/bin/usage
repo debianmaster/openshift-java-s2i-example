@@ -1,4 +1,6 @@
 #!/bin/bash -e
 cat <<EOF
-This a sample usage text
+This is not an application image, please refer this documentation on using this image
+https://github.com/debianmaster/openshift-s2i-example.git  
+
 EOF

@@ -1,7 +1,7 @@
 FROM openshift/base-centos7
 MAINTAINER Chakradhar Rao Jonagam (9chakri@gmail.com)
 
-ENV BUILDER_VERSION 1.0
+ENV BUILDER_VERSION 1.1
 
 RUN yum -y update; \ 
     yum install wget -y; \ 

@@ -5,6 +5,7 @@
 2) Create builder image
 3) Create application image using Builder image
 
+![Worksflow](https://raw.githubusercontent.com/debianmaster/openshift-s2i-example/master/images/Screen%20Shot%202017-04-11%20at%201.09.05%20PM.png)
 
 > To Install s2i command line tool https://github.com/debianmaster/Notes/wiki/Source-2-Image---(s2i)--on-openshift   
 ```sh

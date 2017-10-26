@@ -14,10 +14,10 @@ s2i --help
   
 > In order to use openshift s2i image  create directory  .s2i and files under .s2i as follows   
 ```sh
-mkdir .s2i
-touch .s2i/assemble.sh
-touch .s2i/run.sh
-touch .s2i/usage.sh
+mkdir -p .s2i/bin
+touch .s2i/bin/assemble.sh
+touch .s2i/bin/run.sh
+touch .s2i/bin/usage.sh
 ```
 
 

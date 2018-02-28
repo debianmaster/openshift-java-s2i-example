@@ -1,5 +1,6 @@
 ls -lrt 
 ls -lrt /tmp/src/
 ls -lrt $CATALINA_HOME/webapps
+chown -R 1001:1001 $CATALINA_HOME/webapps
 cp -Rf /tmp/src/. $CATALINA_HOME/webapps
 
